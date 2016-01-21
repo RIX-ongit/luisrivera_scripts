@@ -118,4 +118,9 @@ else {
     print("Office \(officeYear) \(installedOfficeVersion) does not need an update.")
 }
 
+print(currentOfficeVersion.compare(installedOfficeVersion, options: NSStringCompareOptions.NumericSearch).rawValue)
+if currentOfficeVersion.compare(installedOfficeVersion, options: NSStringCompareOptions.NumericSearch) == NSComparisonResult.OrderedDescending {
+    print("Needs update")
+}
+
 exit(0)
